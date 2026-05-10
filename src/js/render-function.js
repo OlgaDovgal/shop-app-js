@@ -43,3 +43,23 @@ export function showNotFound() {
 export function hideNotFound() {
   document.querySelector('.not-found').classList.remove('not-found--visible');
 }
+
+export function clearProductList() {
+  refs.productsEls.innerHTML = "";
+}
+
+export function renderInfoProduct({ title, thumbnail, tags, description, price, shippingInformation, returnPolicy}) {
+  const markupTags = tags.map(item => `<li>${item}</li>`).join("")
+  const markup = `<img class="modal-product__img" src="${thumbnail}" alt="${title}" />
+      <div class="modal-product__content">
+        <p class="modal-product__title">${title}</p>
+        <ul class="modal-product__tags">${markupTags}</ul>
+        <p class="modal-product__description">${description}</p>
+        <p class="modal-product__shipping-information">Shipping: ${shippingInformation}</p>
+        <p class="modal-product__return-policy">Return Policy: ${returnPolicy}</p>
+        <p class="modal-product__price">Price: ${price}$</p>
+        <button class="modal-product__buy-btn" type="button">Buy</button>
+      </div>
+  `
+  refs.modalInfo.innerHTML = markup;
+}
