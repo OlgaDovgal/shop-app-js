@@ -14,3 +14,18 @@ export async function getProducts(currentPage) {
   );
   return data;
 }
+
+export async function getProductsByCategory(category, currentPage) {
+  const skip = (currentPage - 1) * 12;
+  const { data } = await axios.get(
+    `${API_ENDPOINTS.PRODUCTS_BY_CATEGORY}${category}?limit=${PER_PAGE}&skip=${skip}`
+  );
+  return data;
+}
+
+export async function getProductById(id) {
+  const { data } = await axios.get(
+    `${API_ENDPOINTS.PRODUCT_BY_ID}${id}`
+  );
+  return data;
+}
