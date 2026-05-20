@@ -1,0 +1,2 @@
+import{i as n,r as t,s as e,o as d,a as s,b as i,c as a,d as c}from"./assets/handlers-Gfknd-Bx.js";import"./assets/vendor-CJ_tX8LA.js";document.addEventListener("DOMContentLoaded",n);t.productsEls.addEventListener("click",e);t.addTocartBtnModal.addEventListener("click",d);t.addToWishListBtn.addEventListener("click",s);t.changeThemeBtn.addEventListener("click",i);t.scrollUpBtn.addEventListener("click",a);document.addEventListener("scroll",c);
+//# sourceMappingURL=wishlist.js.map
