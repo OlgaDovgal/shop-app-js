@@ -45,13 +45,22 @@ export function hideNotFound() {
 }
 
 export function clearProductList() {
-  refs.productsEls.innerHTML = "";
+  refs.productsEls.innerHTML = '';
 }
 
-export function renderInfoProduct({ title, thumbnail, tags, description, price, shippingInformation, returnPolicy}) {
-  const markupTags = tags.map(item => `<li>${item}</li>`).join("")
+export function renderInfoProduct({
+  title,
+  thumbnail,
+  tags,
+  description,
+  price,
+  shippingInformation,
+  returnPolicy,
+  id,
+}) {
+  const markupTags = tags.map(item => `<li>${item}</li>`).join('');
   const markup = `<img class="modal-product__img" src="${thumbnail}" alt="${title}" />
-      <div class="modal-product__content">
+      <div class="modal-product__content" data-id="${id}">
         <p class="modal-product__title">${title}</p>
         <ul class="modal-product__tags">${markupTags}</ul>
         <p class="modal-product__description">${description}</p>
@@ -60,6 +69,6 @@ export function renderInfoProduct({ title, thumbnail, tags, description, price, 
         <p class="modal-product__price">Price: ${price}$</p>
         <button class="modal-product__buy-btn" type="button">Buy</button>
       </div>
-  `
+  `;
   refs.modalInfo.innerHTML = markup;
 }
